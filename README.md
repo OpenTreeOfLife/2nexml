@@ -24,8 +24,8 @@ executed from some directory that is *not* under $OPEN_TREE_TOOL_DIR
 
 *Option A* use git:
 
- cd my-build-dir
- git clone https://github.com/mtholder/ncl
+  cd my-build-dir
+  git clone https://github.com/mtholder/ncl
  cd ncl
  sh bootstrap.sh
  mkdir build
