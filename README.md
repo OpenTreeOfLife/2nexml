@@ -26,11 +26,11 @@ executed from some directory that is *not* under $OPEN_TREE_TOOL_DIR
 
   cd my-build-dir
   git clone https://github.com/mtholder/ncl
- cd ncl
- sh bootstrap.sh
- mkdir build
- ../configure --prefix="${OPEN_TREE_TOOL_DIR}" --with-constfuncs=yes --disable-shared --with-reserveid
- make -j2 && make check && make install && make installcheck
+  cd ncl
+  sh bootstrap.sh
+  mkdir build
+  ../configure --prefix="${OPEN_TREE_TOOL_DIR}" --with-constfuncs=yes --disable-shared --with-reserveid
+  make -j2 && make check && make install && make installcheck
 
 
 
