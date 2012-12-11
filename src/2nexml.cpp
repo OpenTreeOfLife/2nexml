@@ -1304,6 +1304,8 @@ int readFilesListedIsFile(const char *masterFilepath, MultiFormatReader::DataFor
 	const char * gExeName = "NEXUSinspector";
 #elif defined(NCL_CONVERTER_APP) && NCL_CONVERTER_APP
 	const char * gExeName = "NCLconverter";
+#elif defined(TO_NEXML_CONVERTER) && TO_NEXML_CONVERTER
+	const char * gExeName = "2nexml";
 #else
 #	if defined(MULTIFILE_NEXUS_READER) && MULTIFILE_NEXUS_READER
 		const char * gExeName = "NEXUSunion";
@@ -1332,7 +1334,6 @@ void printHelp(ostream & out)
 	out << "    -h on the command line shows this help message\n\n";
 	out << "    -q suppress NCL status messages while reading files\n\n";
 	out << "    -l<path> reads a file and treats each line of the file as a path to NEXUS file\n\n";
-	out << "    -a output AltNexus (no translation table in trees)\n\n";
 	out << "    -x do NOT validate internal labels in trees as taxa labels\n\n";
 	out << "    -X do NOT treat numbers in trees as taxon numbers, treat them as arbitrary\n        labels (should not be used with NEXUS files).\n\n";
 	out << "    -s<non-negative integer> controls the NEXUS strictness level.\n";
@@ -1351,6 +1352,7 @@ void printHelp(ostream & out)
 #	elif defined(TO_NEXML_CONVERTER) && TO_NEXML_CONVERTER
 		//pass
 #	else
+		out << "    -a output AltNexus (no translation table in trees)\n\n";
 		out << "    -i<number> specifies the length of the interleaved pages to create\n";
 #	endif
 	out << "    -f<format> specifies the input file format expected:\n";
